@@ -5,9 +5,23 @@ Minimal Android Hello World that builds successfully on [NixOS 22.11][NixOS].
 ## Dependencies
 
 The dependencies are provided by the [Nix configuration](default.nix).
+See the configuration and the environment variables that are set there.
 
 - Gradle (a build tool, configs are written in Groovy)
-- Java (for the actual application code)
+- Java JDK like OpenJDK (for the actual application code)
+- Android SDK (see [default.nix] for the example of environment variables you
+  have to set)
+
+## How to build
+
+Run from the root of the project:
+
+``` sh
+./gradlew build
+```
+
+And then you can find the built APK by this path:
+`app/build/outputs/apk/debug/app-debug.apk`
 
 ## Building using Nix
 
@@ -47,6 +61,15 @@ So you can do it like this:
 NIXPKGS_ALLOW_UNFREE=1 ./enter-nix-shell.sh
 ```
 
+Being inside a prepared nix-shell you can run as usual:
+
+``` sh
+./gradlew build
+```
+
+And then take the APK build by this path:
+`app/build/outputs/apk/debug/app-debug.apk`
+
 ### nixpkgs pin
 
 [nixpkgs] are pinned using [Niv]. You don’t need Niv in order to work with the
@@ -73,3 +96,4 @@ successfully. I removed all the extras from it and added Nix configuration.
 [bootstrap-nix-shell.sh]: bootstrap-nix-shell.sh
 [enter-nix-shell.sh]: enter-nix-shell.sh
 [Niv boilerplate]: nix/sources.nix
+[default.nix]: default.nix
