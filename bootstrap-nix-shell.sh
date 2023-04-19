@@ -1,8 +1,12 @@
 #! /usr/bin/env bash
 
-# Read comments in “default.nix” for details.
+# Read for details:
 #
-# You are supposed to source this file being inside nix-shell like this:
+# - README.md
+# - Comments in “default.nix”
+# - enter-nix-shell.sh
+#
+# You are supposed to source this file being inside a nix-shell like this:
 #   source bootstrap-nix-shell.sh
 
 LOCAL_SDK_DIR_NAME=local-android-sdk
@@ -19,7 +23,7 @@ LOCAL_SDK_DIR=${ABSOLUTE_SCRIPT_DIR}/${LOCAL_SDK_DIR_NAME}
 (
     set -o xtrace || exit
     [[ -v ANDROID_SDK_ROOT && -d $ANDROID_SDK_ROOT ]] || exit
-    [[ -v __GRADLE_AAPT2_PATH && -f $__GRADLE_AAPT2_PATH ]] || exit
+    [[ -v __GRADLE_AAPT2_PATH && -f $__GRADLE_AAPT2_PATH && -x $__GRADLE_AAPT2_PATH ]] || exit
     [[ -v GRADLE_OPTS && -n $GRADLE_OPTS ]] || exit
 ) || exit
 
