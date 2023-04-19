@@ -8,3 +8,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Nix builds artifacts
+result*
+
+# Local copy of Android SDK from Nix store
+local-android-sdk
