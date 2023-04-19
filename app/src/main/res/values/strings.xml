@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">MyVideoCallApp</string>
-    <string name="authenticate">Authenticate</string>
+    <string name="app_name">Hello World App</string>
 </resources>
