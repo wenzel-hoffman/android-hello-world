@@ -1,4 +1,5 @@
-{ pkgs ? import <nixpkgs> { config.android_sdk.accept_license = true; } }:
+let sources = import nix/sources.nix; in
+{ pkgs ? import sources.nixpkgs { config.android_sdk.accept_license = true; } }:
 let
   androidSdk = pkgs.androidenv.androidPkgs_9_0.androidsdk;
 
@@ -17,6 +18,7 @@ pkgs.mkShell rec {
   # Run “source bootstrap-nix-shell.sh” after entering nix-shell.
   # It will copy the SDK locally and override the variables below in your nix-shell session.
   # Mind that you have to run it every time you enter nix-shell.
+  # Use “enter-nix-shell.sh” script as a shorthand.
 
   ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
 

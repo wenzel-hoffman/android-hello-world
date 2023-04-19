@@ -47,6 +47,13 @@ So you can do it like this:
 NIXPKGS_ALLOW_UNFREE=1 ./enter-nix-shell.sh
 ```
 
+### nixpkgs pin
+
+[nixpkgs] are pinned using [Niv]. You don’t need Niv in order to work with the
+project ([auto-generated boilerplate][Niv boilerplate] does all the job).
+While it’s more convenient to use Niv for updating the pin you can still do it
+manually in [nix/sources.json](nix/sources.json) file.
+
 ## This is a fork
 
 This is a fork of [hello-world-android made by 100mslive][Fork of].
@@ -58,7 +65,11 @@ successfully. I removed all the extras from it and added Nix configuration.
 [MIT](LICENSE)
 
 [hello-world-android]: https://github.com/100mslive/hello-world-android
+
 [NixOS]: https://nixos.org
 [nixpkgs]: https://github.com/NixOS/nixpkgs
+[Niv]: https://github.com/nmattia/niv
+
 [bootstrap-nix-shell.sh]: bootstrap-nix-shell.sh
 [enter-nix-shell.sh]: enter-nix-shell.sh
+[Niv boilerplate]: nix/sources.nix
