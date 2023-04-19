@@ -1,4 +1,4 @@
-package com.example.myvideocallapp
+package com.example.dummy.helloworld
 
 import android.Manifest
 import android.os.Bundle

@@ -8,7 +8,7 @@ android {
     buildToolsVersion "32.0.0"
 
     defaultConfig {
-        applicationId "com.example.myvideocallapp"
+        applicationId "com.example.dummy.helloworld"
         minSdk 33
         targetSdk 33
         versionCode 1
@@ -39,27 +39,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    // Networking
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation "com.squareup.okhttp3:okhttp:4.9.3"
-    implementation 'com.google.code.gson:gson:2.8.9'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
-    // Background handling
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
-
-    // Viewmodel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
-    // for by viewModels
-    implementation "androidx.activity:activity-ktx:1.6.1"
-
     // Livedata
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
-    // 100ms
-    implementation 'com.github.100mslive.android-sdk:lib:2.5.8'
-
     // Android permissions
-    implementation 'pub.devrel:easypermissions:3.0.0'
+    // implementation 'pub.devrel:easypermissions:3.0.0'
 
 }
